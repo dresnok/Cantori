@@ -45,4 +45,4 @@ Backup danych
 Gdy używasz polecenia reset, tworzona jest kopia danych w folderze cantori/backup/.
 
 Autor
-Wolny programista, Marcin Dresnok (Darr) - marcin.dresnok@gmail.com
+Autor: Freelancer, webdesigner, osoba prywatna, pasjonat i hobbysta - Marcin Dresnok (Darr) - marcin.dresnok@gmail.com
