@@ -36,10 +36,13 @@ Więcej informacji o generowaniu tokena CSRF znajdziesz w pliku readme.txt.
 
 Wersje
 v1.1 - Aktualizacja - 29 czerwca 2024.
+
 Bezpieczeństwo
 Hasło dostępu: Domyślne hasło to '321'. Należy je zmienić. Hasło jest zapisane metodą 'hashing', co zapewnia ochronę przed przejęciem uprawnień. Używane polecenia to password_hash i password_verify.
 Wykluczenie IP: Dodaj swoje IP oraz IP localhosta do wykluczeń, aby uniknąć błędnego nabijania licznika.
+
 Backup danych
 Gdy używasz polecenia reset, tworzona jest kopia danych w folderze cantori/backup/.
+
 Autor
 Wolny programista, Marcin Dresnok (Darr) - marcin.dresnok@gmail.com
