@@ -38,9 +38,6 @@ Informacja o każdej akcji jest zapisywana w pliku errorFile.log. Używane są t
 5. **Token CSRF:**
 Więcej o bezpieczeństwie przesyłania danych znajdziesz w pliku readme.txt.
 
-6. **Wersje:**
-v1.1 - Aktualizacja - 29 czerwca 2024.
-
 7. **Bezpieczeństwo:**
 Domyślne hasło to '321'. Należy je zmienić - jest do tego przeznaczona funkcja w zakładce 'operacje'. Hasło jest zapisane metodą 'hashing', co zapewnia ochronę przed przejęciem uprawnień. Używane polecenia to 'password_hash' i 'password_verify'.
 
