@@ -11,20 +11,25 @@ Projekt Cantori to prosty system statystyk odwiedzin i monitorowania szybkości 
    ```php
    include "php/Contatore_visitatori.php";
 Mierzenie czasu ładowania strony:
-Jeśli chcesz otrzymywać dane o szybkości ładowania strony, umieść funkcję na początku pliku:
+Jeśli chcesz otrzymywać dane o szybkości ładowania strony, umieść funkcję na początku pliku, czyli:
 
+   ```php
+// Pełne statystyki info.php
+include "cantori/ContatoreVisitatori.php";
 
+// Zabezpiecz
 if (function_exists('startTimer')) {
     startTimer();
 }
-Na końcu kodu strony dodaj:
 
+Na końcu kodu strony dodaj:
 
 if (function_exists('endTimer')) {
     $results = endTimer();
     echo 'Strona została załadowana w czasie: ' . $results['currentLoadTime'] . ' ms';
     echo " (średni czas ładowania: " . $results['averageLoadTime'] . " ms) ";
 }
+
 Foldery i pliki:
 Po dodaniu include "php/Contatore_visitatori.php";, niezbędne foldery i pliki zostaną automatycznie utworzone. Dane, w tym szybkość odświeżania strony, będą dostępne w pliku info.php, np. strona.eu/info.php.
 
