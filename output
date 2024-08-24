@@ -1,29 +1,32 @@
-|   errorFile.log
+|   README.md
 |   info.php
 |   
 \---cantori
     |   ContatoreVisitatori.php
+    |   ipEx.txt
     |   login.php
+    |   modifica.txt
     |   password.php
     |   susip.txt
     |   visitors.txt
     |   visits.php
-    |   
+    |   visits2
+    |
     +---backup
     +---css
     |       default-styles.css
-    |       kolor1.css
-    |       kolor2.css
     |       
+    +---dodatki
+    |       editFile.php
+    |       sfondo.php
+    |       templateone.webp
+    |       templatetwo.webp
+    |
+    +---dorme
     +---downloadFile
-    +---function
-    |       function.php
-    |           
     +---last_year
-    |               
-    +---repozytorium
-            .gitignore
-            aboutMe
-            LICENSE
-            README.md
-	+---dorme
+    +---loadFile
+    |       function.php
+    |       function_cantori.php
+    |       SendEmail.php
+    |       specyficFiles.php
