@@ -1,51 +1,84 @@
+cantori/
+│
+├── cantori/
+│   ├── backup/
+│   ├── css/
+│   ├── downloadFile/
+│   ├── dorme/
+│   ├── dodatki/
+│   ├── last_year/
+│   ├── loadFile/
+│   ├── ContatoreVisitatori.php
+│   ├── login.php
+│   ├── password.php
+│   ├── susip.txt
+│   ├── visitors.txt
+│   ├── visits2.php
+│   └── visits.php
+│
+├── info.php
+├── errorFile.log
+└── README.md
+
 # Cantori
 
 ## Opis
 
-Projekt Cantori to prosty system statystyk odwiedzin i monitorowania szybkości ładowania strony, napisany w PHP. System umożliwia zbieranie danych o odwiedzinach, średnim czasie ładowania strony oraz zarządzanie hasłem dostępu i wykluczaniem adresów IP.
+Projekt Cantori to prosty system statystyk odwiedzin i monitorowania szybkości ładowania strony, napisany w PHP. 
+System umożliwia zbieranie danych o odwiedzinach, średnim czasie ładowania strony oraz zarządzanie hasłem dostępu i wykluczaniem adresów IP.
 
 ## Instalacja
 
-1. **Podłącz skrypt do swojej strony:**
-   Umieść pierwszą linię kodu w głównym pliku strony, np. `index.php`:
-   ```php
-   include "php/Contatore_visitatori.php";
+Instalacja:
+ * 1. Dodaj do głównego pliku strony:
+ *    include "cantore/Contatore_visitatori.php";
+ * 
+ * 2. Aby mierzyć czas ładowania strony:
+ *    Na początku kodu: startTimer();
+ *    Na końcu kodu: endTimer();
+ *
+  @include "cantore/Contatore_visitatori.php";
+  if (function_exists('startTimer')) {
+      startTimer();
+  }
+  
+  // Twój kod
+  
+  if (function_exists('endTimer')) {
+      $results = endTimer();
+      echo 'Czas ładowania: ' . $results['currentLoadTime'] . ' ms';
+      echo ' (średni czas: ' . $results['averageLoadTime'] . ' ms)';
+  }
+ *
+ * Logi w 'error.log' w katalogu głównym.
+ * Panel dostępny w 'info.php'.
+ *
+ * Hasło: '321' (zmiana w 'cantori/password.php').
+ *
+ * Wersja: v.1.1
+ *
+ * Aktualizacja: 29.06.2024 - 24.08.2024.ading README.md…]()
 
-2. **Mierzenie czasu ładowania strony:**
-   Jeśli chcesz otrzymywać dane o szybkości ładowania strony, umieść funkcję na początku pliku, czyli:
-   ```php
-   // Pełne statystyki info.php
-   include "cantori/ContatoreVisitatori.php";
-   // Zabezpiecz
-   if (function_exists('startTimer')) {
-   startTimer();
-   }
+   Na końcu kodu: endTimer();
 
-   Na końcu kodu strony dodaj:
+  @include "php/Contatore_visitatori.php";
+  if (function_exists('startTimer')) {
+      startTimer();
+  }
+  
+  // Twój kod
+  
+  if (function_exists('endTimer')) {
+      $results = endTimer();
+      echo 'Czas ładowania: ' . $results['currentLoadTime'] . ' ms';
+      echo ' (średni czas: ' . $results['averageLoadTime'] . ' ms)';
+  }
 
-   if (function_exists('endTimer')) {
-    $results = endTimer();
-    echo 'Strona została załadowana w czasie: ' . $results['currentLoadTime'] . ' ms';
-    echo " (średni czas ładowania: " . $results['averageLoadTime'] . " ms) ";
-   }
+ Logi w 'error.log' w katalogu głównym.
+ Panel dostępny w 'info.php'.
 
-3. **Foldery i pliki:**
-Po dodaniu ContatoreVisitatori.php, niezbędne foldery i pliki zostaną automatycznie utworzone. Dane, w tym szybkość odświeżania strony, będą dostępne w pliku info.php, np. strona.eu/info.php.
+ Hasło: '321' (zmiana w 'cantori/password.php').
 
-4. **Obsługa błędów:**
-Informacja o każdej akcji jest zapisywana w pliku errorFile.log. Używane są także bloki try-catch do przechwytywania szczególnych błędów. Informacje te są wyświetlane w logach w interfejsie oraz zapisywane w tym samym pliku.
+ Wersja: v.1.11
 
-5. **Token CSRF:**
-Więcej o bezpieczeństwie przesyłania danych znajdziesz w pliku readme.txt.
-
-7. **Bezpieczeństwo:**
-Domyślne hasło to '321'. Należy je zmienić - jest do tego przeznaczona funkcja w zakładce 'operacje'. Hasło jest zapisane metodą 'hashing', co zapewnia ochronę przed przejęciem uprawnień. Używane polecenia to 'password_hash' i 'password_verify'.
-
-8. **Wykluczenie IP:**
-Dodaj swoje IP oraz IP localhosta do wykluczeń, aby uniknąć błędnego nabijania licznika.
-
-9. **Backup danych:**
-Gdy usuwasz w jakiś sposób danee w zakładce 'operacje', za każdym razem tworzona jest kopia danych w folderze cantori/backup/.
-
-10. **Autor:**
-Autor: Freelancer, webdesigner, osoba prywatna, pasjonat i hobbysta - Marcin Dresnok (Darr) - marcin.dresnok@gmail.com
+ Aktualizacja: 29.06.2024 - 24.08.2024.
