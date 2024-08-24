@@ -30,9 +30,9 @@ if (function_exists('endTimer')) {
 }
 ```
 
-Logi w 'error.log' w katalogu głównym.
-Panel dostępny w 'info.php'.
+Logi w 'error.log' w katalogu głównym.<br>
+Panel dostępny w 'info.php'.<br>
 Hasło: '321' (zmiana w 'cantori/password.php').
 
-Wersja: v.1.1
+Wersja: v.1.1<br>
 Aktualizacja: 29.06.2024 - 24.08.2024.
