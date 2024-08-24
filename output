@@ -1,21 +1,18 @@
-|   README.md
+|   cantoreVisitatori.zip
 |   info.php
-|   
+|   README.md
+|
 \---cantori
     |   ContatoreVisitatori.php
     |   ipEx.txt
     |   login.php
-    |   modifica.txt
+    |   modifica.php
     |   password.php
-    |   susip.txt
-    |   visitors.txt
-    |   visits.php
-    |   visits2
     |
     +---backup
     +---css
-    |       default-styles.css
-    |       
+    |       normalize.css
+    |
     +---dodatki
     |       editFile.php
     |       sfondo.php
@@ -23,10 +20,12 @@
     |       templatetwo.webp
     |
     +---dorme
+    |       templateone.webp
+    |
     +---downloadFile
     +---last_year
-    +---loadFile
-    |       function.php
-    |       function_cantori.php
-    |       SendEmail.php
-    |       specyficFiles.php
+    \---loadFile
+            function.php
+            function_cantori.php
+            SendEmail.php
+            specyficFiles.php
