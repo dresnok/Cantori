@@ -25,8 +25,8 @@ if (function_exists('startTimer')) {
 
 if (function_exists('endTimer')) {
     $results = endTimer();
-    echo 'Czas &#x142;adowania: ' . $results['currentLoadTime'] . ' ms';
-    echo ' (&#x15B;redni czas: ' . $results['averageLoadTime'] . ' ms)';
+    echo 'Czas ładowania: ' . $results['currentLoadTime'] . ' ms';
+    echo ' (średni czas: ' . $results['averageLoadTime'] . ' ms)';
 }
 ```
 
