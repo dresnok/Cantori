@@ -8,7 +8,7 @@ Projekt Cantori to prosty system statystyk odwiedzin i monitorowania szybkości 
 
 Instalacja:
 
-1. Dodaj do głównego pliku strony: `include "cantore/Contatore_visitatori.php";`
+1. Dodaj do głównego pliku strony: `include "cantori/loadFile/ContatoreVisitatori.php";`
 2. Aby mierzyć czas ładowania strony:
 
   - Na początku kodu: `startTimer();`
@@ -16,20 +16,40 @@ Instalacja:
 
 
 ```
-@include "cantore/Contatore_visitatori.php";
+<?php
+@include "cantore/loadFile/ContatoreVisitatori.php";
 if (function_exists('startTimer')) {
     startTimer();
 }
 
-// Twój kod
+?>
+<!-- Twój kod -->
 
+<?php
+//na zakończenie strony
 if (function_exists('endTimer')) {
     $results = endTimer();
     echo 'Czas ładowania: ' . $results['currentLoadTime'] . ' ms';
     echo ' (średni czas: ' . $results['averageLoadTime'] . ' ms)';
 }
+
+?>
+
+<?php
+// Wyświetl statystyki na dzień, na miesiąc..
+echo '<p class="copy">';
+
+echo "Wizyty: ogółem, dzień, tydzień, miesiąc - " . $_SESSION['unique_visits_day'] . " / ";
+echo $_SESSION['unique_visits_week'] . " / ";
+echo $_SESSION['unique_visits_month'] . " / "; 
+echo VISITORS_UNIK_IP;
+
+echo "</p>";
+ 
+  ?>
+  
 ```
 
-Logi w 'error.log' w katalogu głównym.<BR>
-Panel dostępny w 'info.php'.<BR>
-Hasło: '321' (zmiana w 'cantori/password.php').
+Logi w 'error.log' w katalogu głównym.
+Panel dostępny w 'info.php'.
+Hasło: '321' (zmiana w 'cantori/loadFile/password.php').
