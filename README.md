@@ -17,7 +17,7 @@ Instalacja:
 
 ```
 <?php
-@include "cantore/loadFile/ContatoreVisitatori.php";
+@include "cantori/loadFile/ContatoreVisitatori.php";
 if (function_exists('startTimer')) {
     startTimer();
 }
