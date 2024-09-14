@@ -33,6 +33,10 @@ if (function_exists('endTimer')) {
     echo ' (średni czas: ' . $results['averageLoadTime'] . ' ms)';
 }
 
+//lub poprostu
+if (function_exists('endTimer')) {
+    $results = endTimer();
+}
 ?>
 
 <?php
