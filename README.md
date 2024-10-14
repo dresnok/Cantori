@@ -43,10 +43,22 @@ if (function_exists('endTimer')) {
 // Wyświetl statystyki na dzień, na miesiąc..
 echo '<p class="copy">';
 
-echo "Wizyty: ogółem, dzień, tydzień, miesiąc - " . $_SESSION['unique_visits_day'] . " / ";
+echo "Wizyty: (unik, all, dzień, tydzień, miesiąc)<br>"
+. countUniqueIps(SUSIP_FILE) . " / ";
+echo countAllUnit(LAST_IP) . " / ";
+echo $_SESSION['unique_visits_day'] . " / ";
 echo $_SESSION['unique_visits_week'] . " / ";
 echo $_SESSION['unique_visits_month'] . " / "; 
-echo VISITORS_UNIK_IP;
+echo"<br>";
+if (isset($_SESSION['browser']) && !empty($_SESSION['browser'])) {
+    foreach ($_SESSION['browser'] as $browser => $count) {
+        echo "$browser: $count<br>";
+}}
+
+if (isset($_SESSION['osCounts']) && !empty($_SESSION['osCounts'])) {
+    foreach ($_SESSION['osCounts'] as $os => $count) {
+        echo "$os: $count<br>";
+}}
 
 echo "</p>";
  
@@ -54,6 +66,6 @@ echo "</p>";
   
 ```
 
-Logi w 'error.log' w katalogu głównym.
-Panel dostępny w 'info.php'.
-Hasło: '321' (zmiana w 'cantori/loadFile/password.php').
+Logi w './error.log' w katalogu głównym.
+Panel dostępny w './info.php'.
+Hasło: '321' (cantori/loadFile/password.php).
