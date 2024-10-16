@@ -43,12 +43,12 @@ if (function_exists('endTimer')) {
 // Wyświetl statystyki na dzień, na miesiąc..
 echo '<p class="copy">';
 
-echo "Wizyty: (unik, all, dzień, tydzień, miesiąc)<br>"
-. countUniqueIps(SUSIP_FILE) . " / ";
-echo countAllUnit(LAST_IP) . " / ";
-echo $_SESSION['unique_visits_day'] . " / ";
-echo $_SESSION['unique_visits_week'] . " / ";
-echo $_SESSION['unique_visits_month'] . " / "; 
+echo "Wizyty: unik, all, dzień, tydzień, miesiąc<br>"
+. @countUniqueIps(SUSIP_FILE) . " | ";
+echo @countAllUnit(LAST_IP) . " | ";
+echo $_SESSION['unique_visits_day'] . " | ";
+echo $_SESSION['unique_visits_week'] . " | ";
+echo $_SESSION['unique_visits_month'] . " | "; 
 echo"<br>";
 if (isset($_SESSION['browser']) && !empty($_SESSION['browser'])) {
     foreach ($_SESSION['browser'] as $browser => $count) {
