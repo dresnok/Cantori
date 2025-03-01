@@ -67,5 +67,6 @@ echo "</p>";
 ```
 
 Logi w './error.log' w katalogu głównym.
+
 Panel dostępny w './info.php'.
 Hasło: '321' (cantori/loadFile/password.php).
